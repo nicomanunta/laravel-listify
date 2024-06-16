@@ -25,9 +25,21 @@
 
 <body>
     <div id="app">
-        <main class="">
-            @yield('content')
-        </main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2 vh-100 bg-color-purple">
+                    <div class="text-center">
+                        <img class="logo-grigio-2 mt-4 w-75" src="logo-viola-2.jpeg" alt="">
+                        
+                    </div>
+                </div>
+                <div class="col-10 vh-100">
+                    <main class=""> 
+                        @yield('content')
+                    </main>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

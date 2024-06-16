@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('label_color');
             $table->timestamps();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.

@@ -12,6 +12,73 @@
     font-style: normal; 
 }
 
+.bg-color-grey{
+    background-color: #e9ecef;
+}
+.bg-color-purple{
+    background-color: #6f42c1;
+}
+.color-grey{
+    color: #e9ecef;
+}
+.color-purple{
+    color: #6f42c1;
+}
+
+
+// app.blade
+
+.logo-grigio-2{
+    width: 100%;
+}
+
+.width-link-logo{
+    width: 15%;
+}
+
+// .text-shadow{
+//     position: relative;
+//     font-size: 18px;
+//     font-family: "Archivo Black", sans-serif;
+//     font-weight: 400;
+//     font-style: normal;
+
+//     transition: font-size 1s, padding-left 1s, padding-right 1s, text-shadow 1s;
+//     padding-left: 20px !important;
+//     padding-right: 20px !important;
+//     &:hover{
+//         font-size: 22px;
+//         transition: font-size 1s, padding-left 1s, padding-right 1s, text-shadow 1s;
+//         color: #6f42c1;
+//         padding-left: 14px !important;
+//         padding-right: 14px !important;
+//         text-shadow: 2px 2px #6e42c160;
+//     }
+// }
+.nav-link {
+    font-size: 18px;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 20px !important;
+    transition: transform 1s ease-in-out, text-shadow 1s;
+    
+    
+    &:hover {
+        transform: scale(1.2); /* Aumenta la dimensione del font */
+        color: #6f42c1;
+        text-shadow: 2px 2px #6e42c14a;
+        transition: transform 1s ease-in-out, text-shadow 1s;
+    }
+}
+
+
+
+
+
+
+
+
 // h1{
 //     font-family: "Archivo Black", sans-serif;
 //     font-weight: 400;
