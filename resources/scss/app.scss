@@ -37,10 +37,12 @@
     background-color: #e9ecef;
     border: 2px solid #e9ecef;
     border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     &:hover{
-        border: 2px solid #e9ecef;
-        color: #e9ecef;
+        border: 2px solid #ffc107;
+        color: #ffc107;
         background-color: #6f42c1;
+        
     }
 }
 
@@ -60,15 +62,16 @@
     font-family: "Archivo Black", sans-serif;
     font-weight: 400;
     font-style: normal;
-    padding: 20px !important;
-    transition: transform 0.5s ease-in-out, text-shadow 0.5s;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s;
     
     
     &:hover {
         transform: scale(1.2); 
         color: #6f42c1;
         text-shadow: 2px 2px #6e42c14a;
-        transition: transform 0.5s ease-in-out, text-shadow 0.5s;
+        transition: transform 0.3s ease-in-out, text-shadow 0.3s;
     }
 }
 
@@ -83,41 +86,156 @@
 
 .welcome-title{
     font-size: 60px;
-    text-shadow: 3px 3px #e9ecef4b;
+    text-shadow: 3px 3px #ffc10756;
+    color: #ffc107;
 }
 .welcome-subtitle{
     font-size: 35px;
+    text-shadow: 3px 3px #e9ecef4b;
+
     
 }
 
 .font-login{
     font-size: 40px;
+    color: #ffc107;
+    text-shadow: 3px 3px #ffc10756;
     
-    transition: text-shadow 0.5s;
-    &:hover {
-        text-shadow: 3px 3px #e9ecef4b;
-        transition: text-shadow 0.5s;
-    }
     
 }
 .font-register{
-    color: #e9ecef;
+    color: #ffc107;
     transition: text-shadow 0.5s, transform 0.5s ease-in-out;
     &:hover{
-        text-shadow: 2px 2px #e9ecef4b;
+        text-shadow: 2px 2px #ffc1074d;
         transform: scale(1.2);
         transition: text-shadow 0.5s, transform 0.5s ease-in-out;
+        
     }
 }
 
 .height-collapse{
-    min-height: 35%;
+    min-height: 30%;
 
 }
 
 
+//  ICONE FONT AWESOME
 
+.fa-list{
+    font-size: 80px;
+    transform: rotate(-5deg);
+    top: 40px;
+    color: #ffc107bd;
+}
+.fa-list-ol{
+    font-size: 100px;
+    transform: rotate(-15deg);
+    top: 250px;
+    left: -650px;
+    color: #e9ecefc7;
+}
 
+.fa-list-ul{
+    font-size: 90px;
+    transform: rotate(5deg);
+    top: 350px;
+    color: #e9ecefc7;
+}
+.fa-list-check{
+    font-size: 110px;
+    transform: rotate(15deg);
+    top: 380px;
+    left: -300px;
+    color: #ffc107bd;
+}
+.fa-check{
+    font-size: 80px;
+    transform: rotate(-25deg);
+    top: 400px;
+    left: -500px;
+    color: #ffc107bd;
+}
+.fa-circle-check{
+    font-size: 75px;
+    transform: rotate(25deg);
+    top: 180px;
+    left: 0px;
+    color: #ffc107bd;
+}
+.fa-x{
+    font-size: 95px;
+    transform: rotate(30deg);
+    top: 300px;
+    left: 300px;
+    color: #ffc107bd;
+
+}   
+.fa-circle-xmark{
+    font-size: 83px;
+    transform: rotate(-30deg);
+    top: 140px;
+    left: 540px;
+    color: #e9ecefc7;
+}
+.pencil-2{
+    font-size: 85px;
+    transform: rotate(-65deg);
+    top: 40px;
+    left: 400px;
+    color: #ffc107bd;
+}
+.fa-pen-to-square{
+    font-size: 105px;
+    transform: rotate(-5deg);
+    top: 380px;
+    left: 450px;
+    color: #ffc107bd;
+}
+.fa-file-pen{
+    font-size: 100px;
+    transform: rotate(-15deg);
+    top: 140px;
+    left: 200px;
+    color: #e9ecefc7;
+}
+.pencil-1{
+    font-size: 95px;
+    transform: rotate(10deg);
+    top: 250px;
+    left: -170px;
+    color: #e9ecefc7;
+}
+
+.underline {
+    position: relative; /* Per posizionare il sottolineato relativo al link */
+    text-decoration: none; /* Rimuove il sottolineato predefinito */
+    
+  }
+
+  /* Stile per la linea sottolineata */
+  .underline::after {
+    content: ""; /* Aggiunge un elemento pseudo-contenuto per la linea */
+    position: absolute; /* Posizionamento assoluto rispetto al link */
+    left: 0; /* Inizialmente posizionato a sinistra del link */
+    bottom: 0; /* Posizionato alla base del link */
+    width: 0; /* Inizialmente la larghezza della linea è zero */
+    height: 2px; /* Altezza della linea */
+    background-color: #e9ecef; /* Colore della linea */
+    transition: width 0.3s ease, text-shadow 0.5s;
+     /* Transizione per far espandere la linea */
+  }
+//   &:hover{
+//     text-shadow: 2px 2px #e9ecef4b;
+//     transform: scale(1.2);
+//     transition: text-shadow 0.5s, transform 0.5s ease-in-out;
+// }
+
+  /* Effetto hover: espande la linea */
+  .underline:hover::after {
+    width: 100%; /* Espandi la linea fino alla larghezza del link */
+    box-shadow: 1px 2px #e9ecef4b;
+  }
 
 
 
