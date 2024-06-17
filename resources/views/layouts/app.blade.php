@@ -27,7 +27,7 @@
    
     <div id="app">
 
-        <nav class="navbar navbar-expand-md navbar-light bg-color-grey shadow-header position-fixed w-100">
+        <nav class="navbar navbar-expand-md navbar-light bg-color-grey shadow-header position-fixed z-1 w-100">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center width-link-logo" href="{{ url('/') }}">
                     <div class="text-start">
@@ -50,30 +50,45 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        @guest
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link color-purple text-shadow padding-home" href="{{url('/') }}">{{ __('Home') }}</a>
+                                <a class="nav-link color-purple  padding-home" href="{{url('/') }}">{{ __('Home') }}</a>
                             </li>
                         </ul>
                         <!-- Authentication Links -->
-                        @guest
                         <li class="nav-item">
-                            <a class="nav-link color-purple text-shadow padding-login" href="{{ route('login') }}">{{ __('Accedi') }}</a>
+                            <a class="nav-link color-purple  padding-login" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link color-purple text-shadow padding-register" href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                            <a class="nav-link color-purple  padding-register" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                         </li>
                         @endif
                         @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
+                        <li class="nav-item">
+                            <a class="nav-link link-app color-purple  padding-register" href="{{ url('listify') }}">{{__('Home')}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-app color-purple  padding-register" href="{{ url('profile') }}">{{ Auth::user()->name }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-app color-purple  padding-register" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                        </li>
+                        {{-- <li class="nav-item ">
+                           
+                            
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
-                                <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
+                                <a class="dropdown-item" href="{{ url('profile') }}">{{__('Auth::user()->name')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
@@ -83,7 +98,7 @@
                                     @csrf
                                 </form>
                             </div>
-                        </li>
+                        </li> --}}
                         @endguest
                     </ul>
                 </div>

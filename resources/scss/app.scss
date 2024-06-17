@@ -58,7 +58,7 @@
 }
 
 .nav-link {
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Archivo Black", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -66,7 +66,9 @@
     padding-right: 20px !important;
     transition: transform 0.3s ease-in-out, text-shadow 0.3s;
     
-    
+}
+
+.link-app{
     &:hover {
         transform: scale(1.2); 
         color: #6f42c1;
@@ -78,6 +80,21 @@
 .shadow-header{
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
 }
+
+
+// style.blade
+
+.link-style{
+    transform-origin:  left;
+    &:hover {
+        transform: scale(1.2); 
+        color: #e9ecef;
+        text-shadow: 2px 2px #e9ecef4b;
+        transition: transform 0.3s ease-in-out, text-shadow 0.3s;
+        transform-origin:  left;
+    }
+}
+
 
 // welcome.blade
 .content{

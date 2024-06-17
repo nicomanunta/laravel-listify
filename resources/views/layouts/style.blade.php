@@ -30,7 +30,26 @@
                 <div class="col-2 vh-100 bg-color-purple position-fixed">
                     <div class="text-center "> 
                         <img class="logo-grigio-2 mt-4 w-75" src="logo-viola-2.jpeg" alt="">
-                        
+                    </div>
+                    <div class="mt-4">
+                        <ul class="navbar-nav">
+                            <li class="nav-item ">
+                                <a class="nav-link link-style color-grey " href="{{ url('listify') }}">{{__('Home')}}</a>
+                            </li>
+                            <li class="nav-item my-2">
+                                <a class="nav-link link-style color-grey " href="{{ url('profile') }}">{{ Auth::user()->name }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-style color-grey " href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-2"></div>
