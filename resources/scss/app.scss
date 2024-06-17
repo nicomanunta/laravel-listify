@@ -12,6 +12,12 @@
     font-style: normal; 
 }
 
+.font-archivo{
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .bg-color-grey{
     background-color: #e9ecef;
 }
@@ -25,6 +31,19 @@
     color: #6f42c1;
 }
 
+.btn-listify-grey{
+    padding: 10px 15px ;
+    font-size: 18px;
+    background-color: #e9ecef;
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    &:hover{
+        border: 2px solid #e9ecef;
+        color: #e9ecef;
+        background-color: #6f42c1;
+    }
+}
+
 
 // app.blade
 
@@ -36,41 +55,68 @@
     width: 15%;
 }
 
-// .text-shadow{
-//     position: relative;
-//     font-size: 18px;
-//     font-family: "Archivo Black", sans-serif;
-//     font-weight: 400;
-//     font-style: normal;
-
-//     transition: font-size 1s, padding-left 1s, padding-right 1s, text-shadow 1s;
-//     padding-left: 20px !important;
-//     padding-right: 20px !important;
-//     &:hover{
-//         font-size: 22px;
-//         transition: font-size 1s, padding-left 1s, padding-right 1s, text-shadow 1s;
-//         color: #6f42c1;
-//         padding-left: 14px !important;
-//         padding-right: 14px !important;
-//         text-shadow: 2px 2px #6e42c160;
-//     }
-// }
 .nav-link {
     font-size: 18px;
     font-family: "Archivo Black", sans-serif;
     font-weight: 400;
     font-style: normal;
     padding: 20px !important;
-    transition: transform 1s ease-in-out, text-shadow 1s;
+    transition: transform 0.5s ease-in-out, text-shadow 0.5s;
     
     
     &:hover {
-        transform: scale(1.2); /* Aumenta la dimensione del font */
+        transform: scale(1.2); 
         color: #6f42c1;
         text-shadow: 2px 2px #6e42c14a;
-        transition: transform 1s ease-in-out, text-shadow 1s;
+        transition: transform 0.5s ease-in-out, text-shadow 0.5s;
     }
 }
+
+.shadow-header{
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+// welcome.blade
+.content{
+    height: 100vh;
+}
+
+.welcome-title{
+    font-size: 60px;
+    text-shadow: 3px 3px #e9ecef4b;
+}
+.welcome-subtitle{
+    font-size: 35px;
+    
+}
+
+.font-login{
+    font-size: 40px;
+    
+    transition: text-shadow 0.5s;
+    &:hover {
+        text-shadow: 3px 3px #e9ecef4b;
+        transition: text-shadow 0.5s;
+    }
+    
+}
+.font-register{
+    color: #e9ecef;
+    transition: text-shadow 0.5s, transform 0.5s ease-in-out;
+    &:hover{
+        text-shadow: 2px 2px #e9ecef4b;
+        transform: scale(1.2);
+        transition: text-shadow 0.5s, transform 0.5s ease-in-out;
+    }
+}
+
+.height-collapse{
+    min-height: 35%;
+
+}
+
+
+
 
 
 

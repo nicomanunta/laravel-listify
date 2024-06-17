@@ -24,10 +24,10 @@
 </head>
 
 <body>
-    app.blade
+   
     <div id="app">
 
-        <nav class="navbar navbar-expand-md navbar-light bg-color-grey shadow">
+        <nav class="navbar navbar-expand-md navbar-light bg-color-grey shadow-header position-fixed w-100">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center width-link-logo" href="{{ url('/') }}">
                     <div class="text-start">
@@ -58,11 +58,11 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link color-purple text-shadow padding-login" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link color-purple text-shadow padding-login" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link color-purple text-shadow padding-register" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link color-purple text-shadow padding-register" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                         </li>
                         @endif
                         @else

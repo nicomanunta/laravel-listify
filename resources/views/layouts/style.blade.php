@@ -27,12 +27,13 @@
     <div id="app">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2 vh-100 bg-color-purple">
-                    <div class="text-center">
+                <div class="col-2 vh-100 bg-color-purple position-fixed">
+                    <div class="text-center "> 
                         <img class="logo-grigio-2 mt-4 w-75" src="logo-viola-2.jpeg" alt="">
                         
                     </div>
                 </div>
+                <div class="col-2"></div>
                 <div class="col-10 vh-100">
                     <main class=""> 
                         @yield('content')
