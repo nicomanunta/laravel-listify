@@ -4,7 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\StoreToDoListRequest;
 use App\Http\Requests\UpdateToDoListRequest;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 use App\Models\ToDoList;
+
+use App\Models\User;
+use App\Models\Label;
+use App\Models\Task;
 
 class ToDoListController extends Controller
 {
@@ -15,7 +21,8 @@ class ToDoListController extends Controller
      */
     public function index()
     {
-        //
+        $todolists = ToDoList::where('user_id', auth()->id())->get();
+        return view('admin.todolists.index', compact('todolists'));
     }
 
     /**

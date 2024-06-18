@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ToDoListController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,9 @@ Route::get('/listify', function () {
 })->middleware(['auth', 'verified'])->name('listify');
 
 
+Route::middleware(['auth', 'verified'])->name('admin.')->group(function () {
+    Route::resource('todolists', ToDoListController::class);
+});
 
 
 

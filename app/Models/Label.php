@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Label extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['user_id', 'label_name', 'label_color'];
+
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
 }

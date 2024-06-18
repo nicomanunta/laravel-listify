@@ -42,4 +42,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function toDoLists(){
+        return $this->hasMany(ToDoList::class);
+    }
+
+    public function labels(){
+        return $this->hasMany(Label::class);
+    }
 }
