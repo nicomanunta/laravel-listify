@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('to_do_list_id');
-            $table->foreign('to_do_list_id')->references('id')->on('to_do_lists')->onDelete('cascade');
+            $table->unsignedBigInteger('todolist_id');
+            $table->foreign('todolist_id')->references('id')->on('todolists')->onDelete('cascade');
             $table->text('description');
             $table->boolean('status')->default(false);
             $table->timestamps();
