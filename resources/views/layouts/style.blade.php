@@ -34,7 +34,7 @@
                     <div class="mt-4">
                         <ul class="navbar-nav">
                             <li class="nav-item ">
-                                <a class="nav-link link-style color-grey " href="{{ url('listify') }}">{{__('Home')}}</a>
+                                <a class="nav-link link-style color-grey " href="{{ url('homepage') }}">{{__('Home')}}</a>
                             </li>
                             <li class="nav-item my-2">
                                 <a class="nav-link link-style color-grey " href="{{ url('profile') }}">{{ Auth::user()->name }}</a>

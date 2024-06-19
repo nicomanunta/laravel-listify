@@ -12,6 +12,8 @@ class ToDoList extends Model
 
     protected $fillable = ['user_id', 'title', 'subtitle', 'expiration_date', 'priority', 'slug'];
 
+    protected $table = 'todolists';
+
     public function users(){
         return $this->belongsTo(User::class);
     }

@@ -1,8 +1,8 @@
 @extends('layouts.style')
 
 @section('content')
-    <h1>To-Do Lists</h1>
-
+    <h1>Le tue To-do List</h1>
+    
     @foreach ($todolists as $list)
         <div>
             <h2>{{ $list->title }}</h2>

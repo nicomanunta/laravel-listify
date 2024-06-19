@@ -21,7 +21,7 @@ class ToDoListController extends Controller
      */
     public function index()
     {
-        $todolists = ToDoList::all();
+        $todolists = ToDoList::where('user_id', auth()->id())->get();
 
         return view('admin.todolists.index', compact('todolists'));
     }
