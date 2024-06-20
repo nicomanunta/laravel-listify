@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-2 vh-100 bg-color-purple position-fixed">
                     <div class="text-center "> 
-                        <img class="logo-grigio-2 mt-4 w-75" src="logo-viola-2.jpeg" alt="">
+                        <img class="logo-grigio-2 mt-4 w-75" src="{{URL::asset('/images/logo-giallo-2.jpeg')}}" alt="">
                     </div>
                     <div class="mt-4">
                         <ul class="navbar-nav">
@@ -51,9 +51,16 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="mt-5">
+                        <ul class="navbar-nav">
+                            <li class="nav-item text-uppercase color-yellow font-archivo">To-do List</li>
+                        </ul>
+                        
+
+                    </div>
                 </div>
                 <div class="col-2"></div>
-                <div class="col-10 vh-100">
+                <div class="col-10 vh-100 bg-color-grey">
                     <main class=""> 
                         @yield('content')
                     </main>

@@ -75,6 +75,7 @@
                 <i class="position-absolute fa-regular fa-pen-to-square"></i>
                 <i class="position-absolute fa-solid fa-file-pen"></i>
                 <i class="position-absolute fa-solid fa-pencil pencil-1"></i>
+                
             </div>
         </div>  
         

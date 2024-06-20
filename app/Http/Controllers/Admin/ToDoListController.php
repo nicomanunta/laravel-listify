@@ -33,7 +33,9 @@ class ToDoListController extends Controller
      */
     public function create()
     {
-        //
+        $users= User::all();
+        
+        return view('admin.todolists.create', compact('users'));
     }
 
     /**

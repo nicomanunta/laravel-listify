@@ -31,7 +31,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center width-link-logo" href="{{ url('/') }}">
                     <div class="text-start">
-                        <img class="logo-grigio-2" src="logo-grigio-2.jpeg" alt="">
+                        <img class="logo-grigio-2" src="{{URL::asset('/images/logo-viola-2.jpeg')}}" alt="">
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>

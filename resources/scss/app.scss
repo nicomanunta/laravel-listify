@@ -24,11 +24,17 @@
 .bg-color-purple{
     background-color: #6f42c1;
 }
+.bg-color-yellow{
+    background-color: #ffc107;
+}
 .color-grey{
     color: #e9ecef;
 }
 .color-purple{
     color: #6f42c1;
+}
+.color-yellow{
+    color: #ffc107;
 }
 
 .btn-listify-grey{
@@ -45,6 +51,7 @@
         
     }
 }
+
 
 
 // app.blade
@@ -88,8 +95,8 @@
     transform-origin:  left;
     &:hover {
         transform: scale(1.2); 
-        color: #e9ecef;
-        text-shadow: 2px 2px #e9ecef4b;
+        color: #ffc107;
+        text-shadow: 2px 2px #ffc1074d;
         transition: transform 0.3s ease-in-out, text-shadow 0.3s;
         transform-origin:  left;
     }
@@ -255,8 +262,31 @@
   }
 
 
+// index.blade
+.btn-create{
+    padding: 10px 18px;
+    border-radius: 18px;
+    background-color: #6f42c1;
+    border: 0;
+    color: #e9ecef;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.20);
+    font-size: 25px;
+    
+    
+    &:hover{
+        background-color: #ffc107;
+        color: #6f42c1;
+        text-shadow: 2px 2px #6e42c14a;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+        
+    }
 
+}
 
+.le-tue{
+    font-size: 60px;
+    text-shadow: 3px 3px #6e42c14a;
+}
 
 
 
