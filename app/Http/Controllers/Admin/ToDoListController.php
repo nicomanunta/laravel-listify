@@ -46,7 +46,14 @@ class ToDoListController extends Controller
      */
     public function store(StoreToDoListRequest $request)
     {
-        //
+        $form_data = $request->all();
+        $todolist = new Todolist();
+        $slug = Str::slug($form_data['title'],'-');
+        $form_data['slug'] = $slug;
+        $todolist->user_id = auth()->user()->id;
+        $todolist->fill($form_data);
+
+        $todolist->save();
     }
 
     /**

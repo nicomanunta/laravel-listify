@@ -12,7 +12,7 @@
 </div>
 <div class="mt-3">
 
-    <h1 class=" le-tue font-archivo color-purple text-center text-uppercase">Le tue To-do List</h1>
+    <h1 class=" h1-title font-archivo color-purple text-center text-uppercase">Le tue To-do List</h1>
 </div>
     
     @foreach ($todolists as $list)
