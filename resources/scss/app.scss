@@ -282,6 +282,7 @@
     font-size: 25px;
     
     
+    
     &:hover{
         background-color: #ffc107;
         color: #6f42c1;
@@ -296,25 +297,26 @@
     font-size: 60px;
     text-shadow: 3px 3px #6e42c14a;
 }
-input:focus, select:focus{
+.input-todolist:focus, .select-todolist:focus, .textarea-todolist:focus{
     border: 2px solid #f9d157 !important; /* Cambia il colore del bordo qui */
     /* Cambia anche il colore del box-shadow */
     box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.15) !important;
     
 }
-label{
+.label-todolist{
     font-size: 18px;
 }
-input, select{
+.input-todolist, .select-todolist, .textarea-todolist{
     border: 2px solid transparent !important; 
 }
 .btn-salva{
+    font-size: 20px;
     padding: 5px 10px ;
     background-color: #6f42c1;
     border: 0;
     color: #e9ecef;
     border-radius: 10px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.20);
+    
     &:hover{
         background-color: #ffc107;
         border: 0;
@@ -323,6 +325,29 @@ input, select{
        
     }
 }
+.btn-aggiungi{
+    font-size: 15px;
+    padding: 5px 10px ;
+    background-color: #6f42c1;
+    border: 0;
+    color: #e9ecef;
+    border-radius: 10px;
+    
+    &:hover{
+        background-color: #ffc107;
+        border: 0;
+        color: #6f42c1;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.20);
+       
+    }
+}
+.fa-plus-2{
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+}
+
 
 
 

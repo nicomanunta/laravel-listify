@@ -54,6 +54,15 @@ class ToDoListController extends Controller
         $todolist->fill($form_data);
 
         $todolist->save();
+
+        foreach ($form_data['tasks'] as $task_data) {
+            $task = new Task();
+            $task->description = $task_data['description'];
+            $task->status = false;
+            $todolist->tasks()->save($task);
+        }
+
+        return redirect()->route('admin.todolists.index');
     }
 
     /**
