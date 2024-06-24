@@ -22,6 +22,10 @@ class ToDoList extends Model
         return $this->hasMany(Task::class);
     }
 
+    public function labels(){
+        return $this->belongToMany(Label::class);
+    }
+
 
 
 }

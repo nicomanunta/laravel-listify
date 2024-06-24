@@ -43,6 +43,14 @@
                 </div>
 
                 {{-- TABELLA TODOLISTS --}}
+                <label for="" class="label-todolist color-purple font-archivo shadow-purple mb-2">Seleziona le etichette</label>
+                <br>
+                <div class=" mb-4" role="group" aria-label="Basic checkbox toggle button group">
+                    @foreach ($labels as $label)
+                        <input type="checkbox" class="btn-check" id="label-{{$label->id}}" autocomplete="off" >
+                        <label class="btn btn-outline me-1" for="label-{{$label->id}}"><span class="badge text-bg-secondary"  style="background-color: {{$label->label_color}} !important; text-shadow: 2px 2px #00000020;">{{$label->label_name}}</span></label>
+                    @endforeach  
+                </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label class="label-todolist color-purple font-archivo shadow-purple mb-1" for="priority">Livello di priorità</label>

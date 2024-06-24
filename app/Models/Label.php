@@ -14,4 +14,8 @@ class Label extends Model
     public function users(){
         return $this->belongsTo(User::class);
     }
+
+    public function todolists(){
+        return $this->belongsToMany(Todolist::class);
+    }
 }

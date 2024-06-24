@@ -312,7 +312,7 @@
 .btn-salva{
     font-size: 20px;
     padding: 5px 10px ;
-    background-color: #6f42c1;
+    background-color: #6f42c1 ;
     border: 0;
     color: #e9ecef;
     border-radius: 10px;
@@ -348,7 +348,21 @@
     font-size: 22px;
 }
 
-
+.btn-check:checked + .btn{
+    background-color:#b59be5   ;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+.btn-check + .btn{
+    border: 2px solid transparent !important;
+    border-radius: 10px;
+}
+.btn{
+    padding: 3px 4px;
+}
+.badge{
+    font-size: 14px;
+}
 
 
 // h1{

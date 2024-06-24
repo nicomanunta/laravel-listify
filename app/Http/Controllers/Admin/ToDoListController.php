@@ -34,8 +34,10 @@ class ToDoListController extends Controller
     public function create()
     {
         $users= User::all();
+
+        $labels = Label::all();
         
-        return view('admin.todolists.create', compact('users'));
+        return view('admin.todolists.create', compact('users', 'labels'));
     }
 
     /**
@@ -60,6 +62,10 @@ class ToDoListController extends Controller
             $task->description = $task_data['description'];
             $task->status = false;
             $todolist->tasks()->save($task);
+        }
+
+        if($request->has('labels')){
+            $todolist->label()->attach($form_data['labels']);
         }
 
         return redirect()->route('admin.todolists.index');
