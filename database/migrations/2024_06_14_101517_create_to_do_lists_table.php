@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('title', 200);
+            $table->string('title', 200)->unique();
             $table->string('subtitle', 300)->nullable(); 
             $table->date('expiration_date')->nullable(); 
             $table->enum('priority', ['Urgente', 'Alta', 'Media', 'Bassa'])->nullable(); 

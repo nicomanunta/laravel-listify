@@ -9,9 +9,9 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['to_do_list_id', 'description', 'status'];
+    protected $fillable = ['todolist_id', 'description', 'status'];
 
-    public function toDoLists(){
-        return $this->belongsTo(ToDoList::class);
+    public function todolists(){
+        return $this->belongsTo(ToDoList::class, 'todolist_id');
     }
 }

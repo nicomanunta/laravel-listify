@@ -22,6 +22,8 @@ class ToDoListController extends Controller
     public function index()
     {
         $todolists = ToDoList::where('user_id', auth()->id())->get();
+        
+        
 
         return view('admin.todolists.index', compact('todolists'));
     }
@@ -49,7 +51,7 @@ class ToDoListController extends Controller
     public function store(StoreToDoListRequest $request)
     {
         $form_data = $request->all();
-        $todolist = new Todolist();
+        $todolist = new ToDoList();
         $slug = Str::slug($form_data['title'],'-');
         $form_data['slug'] = $slug;
         $todolist->user_id = auth()->user()->id;
@@ -65,7 +67,7 @@ class ToDoListController extends Controller
         }
 
         if($request->has('labels')){
-            $todolist->label()->attach($form_data['labels']);
+            $todolist->labels()->attach($form_data['labels']);
         }
 
         return redirect()->route('admin.todolists.index');
@@ -77,18 +79,18 @@ class ToDoListController extends Controller
      * @param  \App\Models\ToDoList  $toDoList
      * @return \Illuminate\Http\Response
      */
-    public function show(ToDoList $toDoList)
+    public function show(ToDoList $todolist)
     {
-        //
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ToDoList  $toDoList
+     * @param  \App\Models\ToDoList  $todolist
      * @return \Illuminate\Http\Response
      */
-    public function edit(ToDoList $toDoList)
+    public function edit(ToDoList $todolist)
     {
         //
     }
@@ -97,10 +99,10 @@ class ToDoListController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateToDoListRequest  $request
-     * @param  \App\Models\ToDoList  $toDoList
+     * @param  \App\Models\ToDoList  $todolist
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateToDoListRequest $request, ToDoList $toDoList)
+    public function update(UpdateToDoListRequest $request, ToDoList $todolist)
     {
         //
     }
@@ -108,10 +110,10 @@ class ToDoListController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ToDoList  $toDoList
+     * @param  \App\Models\ToDoList  $todolist
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ToDoList $toDoList)
+    public function destroy(ToDoList $todolist)
     {
         //
     }

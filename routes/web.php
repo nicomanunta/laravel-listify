@@ -33,6 +33,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->group(function () {
 
     // Aggiungi una route esplicita per l'indice delle todolists se necessario
     Route::get('/homepage', [ToDoListController::class, 'index'])->name('homepage');
+    
 });
 
 

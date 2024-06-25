@@ -19,7 +19,13 @@
         <div>
             <h2>{{ $list->title }}</h2>
             <p>{{ $list->subtitle }}</p>
+            <p>{{ $list->expiration_date }}</p>
+            <p>{{ $list->priority }}</p>
             
         </div>
     @endforeach
+    @foreach($list->tasks as $task)
+        <li>{{ $task->description }}</li>
+    @endforeach
+    
 @endsection

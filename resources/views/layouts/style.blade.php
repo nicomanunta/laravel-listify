@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="col-2"></div>
-                <div class="col-10 vh-100 bg-color-grey">
+                <div class="col-10 min-vh-100 bg-color-grey">
                     <main class=""> 
                         @yield('content')
                     </main>

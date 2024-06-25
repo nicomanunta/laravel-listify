@@ -16,6 +16,6 @@ class Label extends Model
     }
 
     public function todolists(){
-        return $this->belongsToMany(Todolist::class);
+        return $this->belongsToMany(ToDoList::class, 'label_todolist', 'todolist_id', 'label_id');
     }
 }

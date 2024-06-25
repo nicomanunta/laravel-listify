@@ -32,7 +32,7 @@
                         <div class="form-group mb-3">
                             <label for="tasks[0][description]" class="label-todolist color-purple font-archivo shadow-purple mb-1">Attività</label>
                             <textarea class="textarea-todolist form-control" wrap="soft" name="tasks[0][description]" id="tasks[0][description]" placeholder="Attività">{{ old('description')}}</textarea>
-                            @error('description')
+                            @error('tasks.0.description')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror
                         </div>
@@ -42,15 +42,28 @@
                     <button type="button" id="add-task-button" class="btn-aggiungi font-archivo shadow-purple">Aggiungi attività <i class="fa-solid fa-plus fa-plus-2"></i></button>
                 </div>
 
-                {{-- TABELLA TODOLISTS --}}
-                <label for="" class="label-todolist color-purple font-archivo shadow-purple mb-2">Seleziona le etichette</label>
-                <br>
-                <div class=" mb-4" role="group" aria-label="Basic checkbox toggle button group">
-                    @foreach ($labels as $label)
-                        <input type="checkbox" class="btn-check" id="label-{{$label->id}}" autocomplete="off" >
-                        <label class="btn btn-outline me-1" for="label-{{$label->id}}"><span class="badge text-bg-secondary"  style="background-color: {{$label->label_color}} !important; text-shadow: 2px 2px #00000020;">{{$label->label_name}}</span></label>
-                    @endforeach  
+                {{-- TABELLA LABELS --}}
+                <div class="form-group  d-flex justify-content-between">
+                    <label for="" class="label-todolist color-purple font-archivo shadow-purple ">Seleziona le etichette</label>
+                    <button type="button" id="" class="btn-etichetta font-archivo shadow-purple me-5">Crea un'etichetta <i class="fa-solid fa-plus fa-plus-3"></i></button>
                 </div>
+                <br>
+                <div class=" mb-3" role="group" aria-label="Basic checkbox toggle button group">
+                    <div class="row ">
+                        @foreach ($labels as $label)
+                            <div class="col-2 text-center mb-2">
+                                <input name="labels[]" type="checkbox" class="btn-check" id="label-{{$label->id}}" value="{{$label->id}}" autocomplete="off" >
+                                <label class="btn btn-label btn-outline " for="label-{{$label->id}}"><span class="badge text-bg-secondary"  style="background-color: {{$label->label_color}} !important; text-shadow: 2px 2px #00000020;">{{$label->label_name}}</span></label>
+                            </div>
+                        @endforeach  
+                        @error('priority')
+                            <div class="text-danger">{{$message}}</div>
+                        @enderror
+                    </div>
+                </div>
+                
+
+                {{-- TABELLA TODOLISTS --}}
                 <div class="row mb-3">
                     <div class="col">
                         <label class="label-todolist color-purple font-archivo shadow-purple mb-1" for="priority">Livello di priorità</label>
@@ -97,9 +110,9 @@
             newTask.innerHTML = `
             
             <div class="form-group mb-3">
-                    <label for="tasks[0][description]" class="label-todolist color-purple font-archivo shadow-purple mb-1">Attività</label>
-                    <textarea class="textarea-todolist form-control" wrap="soft" name="tasks[0][description]" id="tasks[0][description]" placeholder="Compito">{{ old('description')}}</textarea>
-                    @error('description')
+                    <label for="tasks[${taskIndex}][description]" class="label-todolist color-purple font-archivo shadow-purple mb-1">Attività</label>
+                    <textarea class="textarea-todolist form-control" wrap="soft" name="tasks[${taskIndex}][description]" id="tasks[${taskIndex}][description]" placeholder="Compito">{{ old('description')}}</textarea>
+                    @error('tasks.${taskIndex}.description]')
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>
