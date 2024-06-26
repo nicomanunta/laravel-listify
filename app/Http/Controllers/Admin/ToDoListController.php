@@ -81,7 +81,8 @@ class ToDoListController extends Controller
      */
     public function show(ToDoList $todolist)
     {
-        
+        $tasks = $todolist->tasks;
+        return view('admin.todolists.show', compact('todolist', 'tasks'));
     }
 
     /**
@@ -92,7 +93,11 @@ class ToDoListController extends Controller
      */
     public function edit(ToDoList $todolist)
     {
-        //
+        $users= User::all();
+
+        $labels = Label::all();
+        
+        return view('admin.todolists.edit', compact('todolist','users', 'labels'));
     }
 
     /**
@@ -104,7 +109,28 @@ class ToDoListController extends Controller
      */
     public function update(UpdateToDoListRequest $request, ToDoList $todolist)
     {
-        //
+        $form_data = $request->all();
+        $slug = Str::slug($form_data['title'],'-');
+        $form_data['slug'] = $slug;
+        $todolist->update($form_data);
+        $todolist->tasks()->delete();
+        
+        foreach ($form_data['tasks'] as $task_data) {
+            $task = new Task();
+            $task->description = $task_data['description'];
+            $task->status = false;
+            $todolist->tasks()->save($task);
+        }
+
+        if($request->has('labels')){
+            $project->labels()->sync($form_data['labels']);
+        }
+        else{
+            $project->labels()->sync([]);
+        }
+
+        return redirect()->route('admin.todolists.index');
+
     }
 
     /**
@@ -115,6 +141,8 @@ class ToDoListController extends Controller
      */
     public function destroy(ToDoList $todolist)
     {
-        //
+        $todolist->delete();
+
+        return redirect('admin.todolists.index')->with('success', 'To-do list eliminata con successo');
     }
 }

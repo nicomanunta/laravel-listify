@@ -14,18 +14,23 @@
 
     <h1 class=" h1-title font-archivo color-purple text-center text-uppercase">Le tue To-do List</h1>
 </div>
+
+    @foreach ($todolists as $todolist)
+        
+    @endforeach
+
     
-    @foreach ($todolists as $list)
+    {{-- @foreach ($todolists as $todolist)
         <div>
-            <h2>{{ $list->title }}</h2>
-            <p>{{ $list->subtitle }}</p>
-            <p>{{ $list->expiration_date }}</p>
-            <p>{{ $list->priority }}</p>
-            
+            <h2>{{ $todolist->title }}</h2>
+            <p>{{ $todolist->subtitle }}</p>
+            <p>{{ $todolist->expiration_date }}</p>
+            <p>{{ $todolist->priority }}</p>
+            <a class="" href="{{route('admin.todolists.edit', ['todolist' => $todolist->id])}}"><button class=" "><i class="fa-solid fa-plus"></i></button></a>
         </div>
     @endforeach
-    @foreach($list->tasks as $task)
+    @foreach($todolist->tasks as $task)
         <li>{{ $task->description }}</li>
-    @endforeach
+    @endforeach --}}
     
 @endsection

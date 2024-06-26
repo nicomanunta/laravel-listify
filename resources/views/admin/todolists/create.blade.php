@@ -31,7 +31,7 @@
                     <div class="task">
                         <div class="form-group mb-3">
                             <label for="tasks[0][description]" class="label-todolist color-purple font-archivo shadow-purple mb-1">Attività</label>
-                            <textarea class="textarea-todolist form-control" wrap="soft" name="tasks[0][description]" id="tasks[0][description]" placeholder="Attività">{{ old('description')}}</textarea>
+                            <textarea class="textarea-todolist form-control" wrap="soft" name="tasks[0][description]" id="tasks[0][description]" placeholder="Attività">{{ old('tasks[0][description]')}}</textarea>
                             @error('tasks.0.description')
                                 <div class="text-danger">{{$message}}</div>
                             @enderror
@@ -52,7 +52,7 @@
                     <div class="row ">
                         @foreach ($labels as $label)
                             <div class="col-2 text-center mb-2">
-                                <input name="labels[]" type="checkbox" class="btn-check" id="label-{{$label->id}}" value="{{$label->id}}" autocomplete="off" >
+                                <input name="labels[]" type="checkbox" class="btn-check" id="label-{{$label->id}}" value="{{$label->id}}" autocomplete="off" @checked(is_array(old('labels')) && in_array($labels->id, old('labels')))>
                                 <label class="btn btn-label btn-outline " for="label-{{$label->id}}"><span class="badge text-bg-secondary"  style="background-color: {{$label->label_color}} !important; text-shadow: 2px 2px #00000020;">{{$label->label_name}}</span></label>
                             </div>
                         @endforeach  
@@ -69,10 +69,10 @@
                         <label class="label-todolist color-purple font-archivo shadow-purple mb-1" for="priority">Livello di priorità</label>
                         <select name="priority" class="form-control select-todolist">
                             <option value="">Seleziona la priorità</option>
-                            <option value="Urgente">Urgente</option>
-                            <option value="Alta">Alta</option>
-                            <option value="Media">Media</option>
-                            <option value="Bassa">Bassa</option>
+                            <option value="Urgente" {{old('priority') == 'Urgente' ? 'selected' : ''}}>Urgente</option>
+                            <option value="Alta" {{old('priority') == 'Alta' ? 'selected' : ''}}>Alta</option>
+                            <option value="Media" {{old('priority') == 'Media' ? 'selected' : ''}}>Media</option>
+                            <option value="Bassa" {{old('priority') == 'Bassa' ? 'selected' : ''}}>Bassa</option>
                         </select>
                         @error('priority')
                             <div class="text-danger">{{$message}}</div>
@@ -111,7 +111,7 @@
             
             <div class="form-group mb-3">
                     <label for="tasks[${taskIndex}][description]" class="label-todolist color-purple font-archivo shadow-purple mb-1">Attività</label>
-                    <textarea class="textarea-todolist form-control" wrap="soft" name="tasks[${taskIndex}][description]" id="tasks[${taskIndex}][description]" placeholder="Compito">{{ old('description')}}</textarea>
+                    <textarea class="textarea-todolist form-control" wrap="soft" name="tasks[${taskIndex}][description]" id="tasks[${taskIndex}][description]" placeholder="Attività">{{ old('tasks[${taskIndex}][description]')}}</textarea>
                     @error('tasks.${taskIndex}.description]')
                         <div class="text-danger">{{$message}}</div>
                     @enderror
