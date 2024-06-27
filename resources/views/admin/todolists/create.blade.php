@@ -53,7 +53,7 @@
                         @foreach ($labels as $label)
                             <div class="col-2 text-center mb-2">
                                 <input name="labels[]" type="checkbox" class="btn-check" id="label-{{$label->id}}" value="{{$label->id}}" autocomplete="off" @checked(is_array(old('labels')) && in_array($labels->id, old('labels')))>
-                                <label class="btn btn-label btn-outline " for="label-{{$label->id}}"><span class="badge text-bg-secondary"  style="background-color: {{$label->label_color}} !important; text-shadow: 2px 2px #00000020;">{{$label->label_name}}</span></label>
+                                <label class="btn btn-label btn-outline " for="label-{{$label->id}}"><span class="badge badge-create text-bg-secondary"  style="background-color: {{$label->label_color}} !important; text-shadow: 2px 2px #00000020;">{{$label->label_name}}</span></label>
                             </div>
                         @endforeach  
                         @error('priority')

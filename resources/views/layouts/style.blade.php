@@ -27,7 +27,7 @@
     <div id="app">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2 vh-100 bg-color-purple position-fixed">
+                <div class="col-2 vh-100 bg-color-purple position-fixed overflow-auto">
                     <div class="text-center "> 
                         <img class="logo-grigio-2 mt-4 w-75" src="{{URL::asset('/images/logo-giallo-2.jpeg')}}" alt="">
                     </div>
@@ -40,20 +40,30 @@
                                 <a class="nav-link link-style color-grey " href="{{ url('profile') }}">{{ Auth::user()->name }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link link-style color-grey " href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                                <a class="nav-link link-style color-grey " href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </li>
                         </ul>
                     </div>
                     <div class="mt-5">
                         <ul class="navbar-nav">
-                            <li class="nav-item text-uppercase color-yellow font-archivo">To-do List</li>
+                            <li class="nav-item text-uppercase color-yellow font-archivo padding-20 size-todolist"> To-do List</li>
+                        </ul>
+                        <ul class="navbar-nav mt-3">
+                            @isset($todolists)
+                                @foreach ($todolists as $todolist)
+                                    <li class=" nav-item padding-20">
+                                        <a class="text-decoration-none color-grey font-archivo text-uppercase size-link-todolist" href="{{route('admin.todolists.show', ['todolist' => $todolist->id])}}">
+                                            {{$todolist->title}}
+                                        </a>
+                                    </li>
+                                    <hr>
+                                @endforeach
+                            @endisset
                         </ul>
                         
 

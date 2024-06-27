@@ -102,6 +102,7 @@
 
 .link-style{
     transform-origin:  left;
+    
     &:hover {
         transform: scale(1.2); 
         color: #ffc107;
@@ -110,7 +111,30 @@
         transform-origin:  left;
     }
 }
+.padding-20{
+    padding: 0 20px;
+}
+.size-todolist{
+    font-size: 18px;
+    text-shadow: 2px 2px #ffc1074d;
+}
+.size-link-todolist{
+    font-size: 13px;
+    
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s;
+    &:hover {
+         
+        color: #ffc107;
+        text-shadow: 2px 2px #ffc1074d;
+        transition: transform 0.3s ease-in-out, text-shadow 0.1s;
+      
+    }
+}
 
+hr{
+    margin: 8px 0;
+    color: #e9ecef;
+}
 
 // welcome.blade
 .content{
@@ -258,11 +282,7 @@
     transition: width 0.3s ease, text-shadow 0.5s;
      /* Transizione per far espandere la linea */
   }
-//   &:hover{
-//     text-shadow: 2px 2px #e9ecef4b;
-//     transform: scale(1.2);
-//     transition: text-shadow 0.5s, transform 0.5s ease-in-out;
-// }
+
 
   /* Effetto hover: espande la linea */
   .underline:hover::after {
@@ -360,8 +380,11 @@
 .btn-label{
     padding: 3px 4px;
 }
-.badge{
+.badge-create{
     font-size: 16px;
+}
+.badge-index{
+    font-size: 12px;
 }
 
 .btn-etichetta{
@@ -387,9 +410,77 @@
     font-size: 14px;
 }
 
+.btn-edit{
+    padding: 10px 12px;
+    border-right: 1.5px solid #ffc107;
+    border-bottom-left-radius:10px;
+    background-color: #6f42c1;
+    color: #e9ecef;
+    
+    
+}
+.btn-delete{
+    padding: 10px 12px;
+    border: 0;
+    border-left: 1.5px solid #ffc107;
+    border-bottom-right-radius:10px;
+    background-color: #6f42c1;
+    color: #e9ecef;
+   
 
-// h1{
-//     font-family: "Archivo Black", sans-serif;
-//     font-weight: 400;
-//     font-style: normal;
-// }
+}
+.btn-edit:hover{
+    background-color:#ffc107;
+    color: #6f42c1;
+    text-shadow: 2px 2px #b59be5;
+   
+}
+
+
+.btn-delete:hover{
+    background-color:rgb(217, 1, 1);
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.47);
+}
+.card-title{
+    text-shadow: 2px 2px #ffc1074d;
+}
+
+.pencil, .cestino{
+    font-size: 20px;
+}
+
+
+
+.border-yellow{
+    border-top: 3px solid #ffc107;
+}
+
+.link-card{
+    color: #e9ecef;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    
+    background-color: #6f42c1;
+   
+    
+}
+.border-radius-bottom{
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.card{
+    border-radius: 15px;
+    min-height: 300px;
+    border: 4px solid #ffc107;
+    box-shadow: 5px 5px 5px rgba(110, 66, 193, 0.427);
+    
+    transition: transform 0.5s;
+
+    &:hover{
+        
+        transform: scale(1.05); 
+
+    }
+    
+}
+

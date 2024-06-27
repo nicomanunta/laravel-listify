@@ -25,7 +25,7 @@ class ToDoListController extends Controller
         
         
 
-        return view('admin.todolists.index', compact('todolists'));
+        return view('admin.todolists.index',  compact('todolists'));
     }
 
     /**
@@ -123,10 +123,10 @@ class ToDoListController extends Controller
         }
 
         if($request->has('labels')){
-            $project->labels()->sync($form_data['labels']);
+            $todolist->labels()->sync($form_data['labels']);
         }
         else{
-            $project->labels()->sync([]);
+            $todolist->labels()->sync([]);
         }
 
         return redirect()->route('admin.todolists.index');
