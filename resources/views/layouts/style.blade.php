@@ -57,11 +57,21 @@
                             @isset($todolists)
                                 @foreach ($todolists as $todolist)
                                     <li class=" nav-item padding-20">
-                                        <a class="text-decoration-none color-grey font-archivo text-uppercase size-link-todolist" href="{{route('admin.todolists.show', ['todolist' => $todolist->id])}}">
-                                            {{$todolist->title}}
-                                        </a>
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <a class="text-decoration-none color-grey font-archivo text-uppercase size-link-todolist" href="{{route('admin.todolists.show', ['todolist' => $todolist->id])}}">
+                                                    {{$todolist->title}}
+                                                </a>
+                                            </div>
+                                            <div class="col-3 text-end d-flex justify-content-center ">
+                                                <a class="pe-1 align-content-center" href="{{route('admin.todolists.edit', ['todolist' => $todolist->id])}}"><i class="fa-solid fa-pencil color-grey pencil-style"></i></a>
+                                                <a class="ps-1 align-content-center" href="" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $todolist->id }}"><i class="fa-solid fa-trash color-grey trash-style"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                        
                                     </li>
-                                    <hr>
+                                    <hr class="hr-style">
                                 @endforeach
                             @endisset
                         </ul>
@@ -70,7 +80,7 @@
                     </div>
                 </div>
                 <div class="col-2"></div>
-                <div class="col-10 min-vh-100 bg-color-grey">
+                <div class="col-10 min-vh-100 bg-color-grey pb-3">
                     <main class=""> 
                         @yield('content')
                     </main>

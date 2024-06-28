@@ -39,7 +39,9 @@ class ToDoListController extends Controller
 
         $labels = Label::all();
         
-        return view('admin.todolists.create', compact('users', 'labels'));
+        $todolists = ToDoList::all();
+        
+        return view('admin.todolists.create', compact('users', 'labels', 'todolists'));
     }
 
     /**
@@ -81,8 +83,13 @@ class ToDoListController extends Controller
      */
     public function show(ToDoList $todolist)
     {
+        $todolists = Todolist::all(); 
         $tasks = $todolist->tasks;
-        return view('admin.todolists.show', compact('todolist', 'tasks'));
+        return view('admin.todolists.show', compact('todolist','todolists', 'tasks'));
+
+        
+    
+       
     }
 
     /**
@@ -96,8 +103,9 @@ class ToDoListController extends Controller
         $users= User::all();
 
         $labels = Label::all();
+        $todolists = Todolist::all(); 
         
-        return view('admin.todolists.edit', compact('todolist','users', 'labels'));
+        return view('admin.todolists.edit', compact('todolist','users', 'labels', 'todolists'));
     }
 
     /**

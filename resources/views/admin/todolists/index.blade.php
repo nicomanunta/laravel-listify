@@ -20,10 +20,10 @@
                 <div class="col-3 mt-5 mb-2">
                     <a class="text-decoration-none link-card h-100" href="{{route('admin.todolists.show', ['todolist' => $todolist->id])}}">
 
-                        <div class="card d-flex bg-color-purple justify-content-between h-100" >
+                        <div class="card card-index d-flex bg-color-purple justify-content-between h-100" >
                             <div class="card-body h-100">
-                                <h5 class="card-title mt-1 font-archivo color-yellow text-center text-uppercase ">{{ $todolist->title }}</h5>
-                                <h6 class="card-subtitle pt-1 mb-2 font-archivo text-center">{{ $todolist->subtitle }}</h6>
+                                <h5 class="card-title mt-1  color-yellow text-center text-uppercase "><span class="underline font-archivo">{{ $todolist->title }}</span></h5>
+                                <h6 class="card-subtitle pt-3 font-archivo text-center">{{ $todolist->subtitle }}</h6>
                                 <p class="card-text pt-1">
                                     <div class="text-center">Priorità:
                                         <span class="font-archivo text-uppercase" 
@@ -70,14 +70,17 @@
                                 <button class=" btn-delete col-6 text-center" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $todolist->id }}"><i class="fa-solid fa-trash cestino"></i></button>
                                
                             </div>
-                            @include('admin.todolists.partials.modal_delete')
-                        </a>
                         </div>
+                    </a>
+                    
                 </div>
             @endforeach
 
         </div>
     </div>
+    @foreach ($todolists as $todolist)
+        @include('admin.todolists.partials.modal_delete', ['todolist_id' => $todolist->id])
+    @endforeach
 
 
     

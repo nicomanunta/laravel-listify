@@ -119,7 +119,7 @@
     text-shadow: 2px 2px #ffc1074d;
 }
 .size-link-todolist{
-    font-size: 13px;
+    font-size: 12px;
     
     transition: transform 0.3s ease-in-out, text-shadow 0.3s;
     &:hover {
@@ -130,8 +130,15 @@
       
     }
 }
+.pencil-style, .trash-style{
+    font-size: 13px;
+    &:hover{
+        color: #ffc107;
+        text-shadow: 2px 2px #ffc1074d;
+    }
+}
 
-hr{
+.hr-style{
     margin: 8px 0;
     color: #e9ecef;
 }
@@ -368,12 +375,12 @@ hr{
     font-size: 22px;
 }
 
-.btn-check:checked + .btn{
+.btn-check-label:checked + .btn{
     background-color:#b59be5   ;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
 }
-.btn-check + .btn{
+.btn-check-label + .btn{
     border: 2px solid transparent !important;
     border-radius: 10px;
 }
@@ -468,7 +475,7 @@ hr{
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
-.card{
+.card-index{
     border-radius: 15px;
     min-height: 300px;
     border: 4px solid #ffc107;
@@ -482,5 +489,83 @@ hr{
 
     }
     
+}
+
+.underline {
+    position: relative; /* Per posizionare il sottolineato relativo al link */
+    text-decoration: none; /* Rimuove il sottolineato predefinito */
+     
+}
+
+/* Stile per la linea sottolineata */
+.underline::after {
+    content: ""; /* Aggiunge un elemento pseudo-contenuto per la linea */
+    position: absolute; /* Posizionamento assoluto rispetto al link */
+    left: 0; /* Inizialmente posizionato a sinistra del link */
+    bottom: -4px; /* Posizionato alla base del link */
+    width: 0; /* Inizialmente la larghezza della linea è zero */
+    height: 3px; /* Altezza della linea */
+    background-color: #ffc107; /* Colore della linea */
+    transition: width 0.4s ease; /* Transizione per far espandere la linea */
+    box-shadow: 2px 2px #ffc1074d;
+    border-radius: 2px;
+}   
+
+/* Effetto hover: espande la linea */
+.card:hover .underline::after {
+    width: 100%; /* Espandi la linea fino alla larghezza del link */
+}
+
+
+
+
+//show.blade
+
+.h2-subtitle{
+    text-shadow: 2px 2px #6e42c14a;
+    font-size: 40px;
+}
+
+
+.hr-show{
+    color: #6f42c1;
+
+}
+.btn-check-description{
+    border: 0;
+}
+
+.btn-check-description:checked + .btn{
+    background-color:#b59be5   ;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+    // color: #ffc107;
+    text-shadow: 0px 0px;
+    font-size: 0.9rem;
+    transition: font-size 0.7s;
+    
+    
+}
+.btn-check-description + .btn{
+    border: 2px solid transparent !important;
+   
+}
+.label-description{
+    color: white;
+    font-weight: 500;
+    font-size: 22px;
+    transition: font-size 0.7s;
+    background-color:#6f42c1;
+    border-radius: 10px;
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.238);
+    &:hover{
+        background-color:#6e42c1d9  !important ;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15) !important;
+        color: white !important;
+    }
+    &:active{
+        background-color:#6e42c1ee  !important ;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15) !important;
+        color: white !important;
+    }
 }
 
