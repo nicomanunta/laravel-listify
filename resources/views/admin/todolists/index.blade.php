@@ -25,8 +25,8 @@
                                     <span class="underline font-archivo ms-3 font-hover">Filtra e Ordina </span> 
                                 </button>
                             </h2>
-                            <div class="row ">
-                                <div id="collapseOne" class="accordion-collapse collapse  bg-color-grey d-flex" data-bs-parent="#accordionExample">
+                            <div id="collapseOne" class="accordion-collapse collapse  bg-color-grey " data-bs-parent="#accordionExample">
+                                <div class="row ">
                                     <div class="col-3">
                                         <select name="priority" class="form-control select-todolist">
                                             <option value="">Filtra per etichetta</option>
