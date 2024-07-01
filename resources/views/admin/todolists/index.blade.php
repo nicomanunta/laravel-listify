@@ -15,6 +15,43 @@
     <h1 class=" h1-title font-archivo color-purple text-center text-uppercase">Le tue To-do List</h1>
 </div>
     <div class="container">
+        <form action="{{route('admin.todolists.index')}}" method="get">
+            <div class="row">
+                <div class="col-12">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="btn-accordion text-start   mb-3 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <span class="underline font-archivo ms-3 font-hover">Filtra e Ordina </span> 
+                                </button>
+                            </h2>
+                            <div class="row ">
+                                <div id="collapseOne" class="accordion-collapse collapse  bg-color-grey d-flex" data-bs-parent="#accordionExample">
+                                    <div class="col-3">
+                                        <select name="priority" class="form-control select-todolist">
+                                            <option value="">Filtra per etichetta</option>
+                                            <option value="Urgente" >Urgente</option>
+                                            <option value="Alta">Alta</option>
+                                            <option value="Media">Media</option>
+                                            <option value="Bassa" >Bassa</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select name="priority" class="form-control select-todolist">
+                                            <option value="">Filtra per Priorità</option>
+                                            <option value="Urgente" >Urgente</option>
+                                            <option value="Alta" >Alta</option>
+                                            <option value="Media" >Media</option>
+                                            <option value="Bassa" >Bassa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
         <div class="row">
             @foreach ($todolists as $todolist)
                 <div class="col-3 mt-5 mb-2">

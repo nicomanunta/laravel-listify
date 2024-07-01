@@ -271,31 +271,7 @@
     color: #e9ecefc7;
 }
 
-.underline {
-    position: relative; /* Per posizionare il sottolineato relativo al link */
-    text-decoration: none; /* Rimuove il sottolineato predefinito */
-    
-  }
 
-  /* Stile per la linea sottolineata */
-  .underline::after {
-    content: ""; /* Aggiunge un elemento pseudo-contenuto per la linea */
-    position: absolute; /* Posizionamento assoluto rispetto al link */
-    left: 0; /* Inizialmente posizionato a sinistra del link */
-    bottom: 0; /* Posizionato alla base del link */
-    width: 0; /* Inizialmente la larghezza della linea è zero */
-    height: 2px; /* Altezza della linea */
-    background-color: #e9ecef; /* Colore della linea */
-    transition: width 0.3s ease, text-shadow 0.5s;
-     /* Transizione per far espandere la linea */
-  }
-
-
-  /* Effetto hover: espande la linea */
-  .underline:hover::after {
-    width: 100%; /* Espandi la linea fino alla larghezza del link */
-    box-shadow: 1px 2px #e9ecef4b;
-  }
 
 
 // index.blade
@@ -514,7 +490,17 @@
 /* Effetto hover: espande la linea */
 .card:hover .underline::after {
     width: 100%; /* Espandi la linea fino alla larghezza del link */
+    
 }
+
+
+
+
+  /* Effetto hover: espande la linea */
+  .underline:hover::after {
+    width: 100%; /* Espandi la linea fino alla larghezza del link */
+    box-shadow: 1px 2px #e9ecef4b;
+  }
 
 
 
@@ -569,3 +555,63 @@
     }
 }
 
+.priority{
+    background-color: #6f42c1;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+.btn-edit-show{
+    padding: 12px 12px;
+    color: #e9ecef;
+    background-color: #6f42c1;
+    border-radius: 10px;
+    &:hover{
+        background-color: #ffc107;
+        color: #6f42c1;
+        text-shadow: 2px 2px #6e42c14a;
+    }
+}
+.btn-delete-show{
+    padding: 10px 13px;
+    color: #e9ecef;
+    background-color: #6f42c1;
+    border-radius: 10px;
+    border: 0;
+    &:hover{
+        background-color:rgb(217, 1, 1);
+        text-shadow: 2px 2px rgba(255, 255, 255, 0.47);
+    }
+}
+
+.position-btn{
+    top: 50px;
+
+}
+
+
+
+//FILTRI INDEX
+.btn-accordion{
+    background-color: #e9ecef !important;
+    border: 0 !important;
+    color: #6f42c1 !important;
+    text-shadow: 2px 2px #6e42c14a !important;
+    font-size: 18px;
+    width: 100%;
+}
+.accordion-header{
+    background-color: #e9ecef !important;
+}
+// .accordion-button::after{
+//     color: #6f42c1 !important;
+//     text-shadow: 2px 2px #6e42c14a !important;
+//     border: 0 !important;
+
+// }
+.accordion-item{
+    border: 0 !important;
+}
+
+// .accordion-item::after{
+//     border: 0 !important;
+// }
