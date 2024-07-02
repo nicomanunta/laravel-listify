@@ -29,7 +29,13 @@
             <div class="row">
                 <div class="col-2 vh-100 bg-color-purple position-fixed overflow-auto">
                     <div class="text-center "> 
-                        <img class="logo-grigio-2 mt-4 w-75" src="{{URL::asset('/images/logo-giallo-2.jpeg')}}" alt="">
+                        <a class="navbar-brand  width-link-logo" href="{{ url('/homepage') }}">
+                            <div class="text-center">
+                                <img class=" logo-grigio-2 mt-4 w-75" src="{{URL::asset('/images/logo-giallo-2.jpeg')}}" alt="">
+                            </div>
+                            {{-- config('app.name', 'Laravel') --}}
+                        </a>
+                        
                     </div>
                     <div class="mt-4">
                         <ul class="navbar-nav">

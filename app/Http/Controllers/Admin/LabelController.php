@@ -1,10 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\StoreLabelRequest;
 use App\Http\Requests\UpdateLabelRequest;
 use App\Models\Label;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Models\ToDoList;
+use App\Models\User;
+use App\Models\Task;
 
 class LabelController extends Controller
 {
@@ -36,7 +42,7 @@ class LabelController extends Controller
      */
     public function store(StoreLabelRequest $request)
     {
-        //
+        
     }
 
     /**

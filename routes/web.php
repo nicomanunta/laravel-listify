@@ -30,11 +30,12 @@ Route::get('/homepage', function () {
 Route::middleware(['auth', 'verified'])->name('admin.')->group(function () {
     // Route::resource crea automaticamente le route CRUD per le todolists
     Route::resource('todolists', ToDoListController::class);
-
-    // Aggiungi una route esplicita per l'indice delle todolists se necessario
+    Route::resource('labels', LabelController::class);
+    
     Route::get('/homepage', [ToDoListController::class, 'index'])->name('homepage');
     
 });
+
 
 
 

@@ -22,7 +22,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="btn-accordion text-start   mb-3 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <span class="underline font-archivo ms-3 font-hover">Filtra e Ordina </span> 
+                                    <span class="underline font-archivo ms-3 font-hover">Filtra e Ordina <i class="fa-solid fa-angle-down"></i></span> 
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse  bg-color-grey " data-bs-parent="#accordionExample">
