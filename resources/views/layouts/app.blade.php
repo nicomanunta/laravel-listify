@@ -53,16 +53,16 @@
                         @guest
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link color-purple  padding-home" href="{{url('/') }}">{{ __('Home') }}</a>
+                                <a class="nav-link color-purple link-app  padding-home" href="{{url('/') }}">{{ __('Home') }}</a>
                             </li>
                         </ul>
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link color-purple  padding-login" href="{{ route('login') }}">{{ __('Accedi') }}</a>
+                            <a class="nav-link color-purple link-app  padding-login" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link color-purple  padding-register" href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                            <a class="nav-link color-purple link-app  padding-register" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                         </li>
                         @endif
                         @else

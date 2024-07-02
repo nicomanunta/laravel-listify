@@ -28,23 +28,33 @@
                             <div id="collapseOne" class="accordion-collapse collapse  bg-color-grey " data-bs-parent="#accordionExample">
                                 <div class="row ">
                                     <div class="col-3">
-                                        <select name="priority" class="form-control select-todolist">
-                                            <option value="">Filtra per etichetta</option>
-                                            <option value="Urgente" >Urgente</option>
-                                            <option value="Alta">Alta</option>
-                                            <option value="Media">Media</option>
-                                            <option value="Bassa" >Bassa</option>
+                                        <select name="label" class="form-control select-todolist">
+                                            <option value="">Tutte le Etichette</option>
+                                            @foreach ($labels as $label)
+                                                <option value="{{$label->label_name}}" {{ request('label') == $label->label_name ? 'selected' : '' }}>{{$label->label_name}}</option>
+                                            @endforeach 
                                         </select>
                                     </div>
                                     <div class="col-3">
                                         <select name="priority" class="form-control select-todolist">
-                                            <option value="">Filtra per Priorità</option>
-                                            <option value="Urgente" >Urgente</option>
-                                            <option value="Alta" >Alta</option>
-                                            <option value="Media" >Media</option>
-                                            <option value="Bassa" >Bassa</option>
+                                            <option value="">Tutte le Priorità</option>
+                                            <option value="Urgente" {{ request('priority') == 'Urgente' ? 'selected' : '' }}>Urgente</option>
+                                            <option value="Alta" {{ request('priority') == 'Alta' ? 'selected' : '' }}>Alta</option>
+                                            <option value="Media" {{ request('priority') == 'Media' ? 'selected' : '' }}>Media</option>
+                                            <option value="Bassa" {{ request('priority') == 'Bassa' ? 'selected' : '' }}>Bassa</option>
                                         </select>
                                     </div>
+                                    <div class="col-3">
+                                        <select name="sort" class="form-control select-todolist">
+                                            <option value="" >Ordina</option>
+                                            <option value="asc" {{request('sort') == 'asc' ? 'selected' : ''}}>Scadenza: dalla più vicina</option>
+                                            <option value="desc" {{request('sort') == 'desc' ? 'selected' : ''}}>Scadenza: dalla più lontana</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <button type="submit" class="btn-filtro font-archivo">Filtra</button>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -120,18 +130,5 @@
     @endforeach
 
 
-    
-    {{-- @foreach ($todolists as $todolist)
-        <div>
-            <h2>{{ $todolist->title }}</h2>
-            <p>{{ $todolist->subtitle }}</p>
-            <p>{{ $todolist->expiration_date }}</p>
-            <p>{{ $todolist->priority }}</p>
-            <a class="" href="{{route('admin.todolists.edit', ['todolist' => $todolist->id])}}"><button class=" "><i class="fa-solid fa-plus"></i></button></a>
-        </div>
-    @endforeach
-    @foreach($todolist->tasks as $task)
-        <li>{{ $task->description }}</li>
-    @endforeach --}}
     
 @endsection

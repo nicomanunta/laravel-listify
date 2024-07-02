@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\StoreToDoListRequest;
 use App\Http\Requests\UpdateToDoListRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\ToDoList;
 
@@ -19,13 +20,37 @@ class ToDoListController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $todolists = ToDoList::where('user_id', auth()->id())->get();
+        $query = ToDoList::where('user_id', auth()->id());
+
+        if ($request->has('label') && $request->label != '') {
+            $query->whereHas('labels', function($q) use ($request) {
+                $q->where('label_name', $request->label);
+            });
+            
+        }
+        if($request->has('priority') && $request->priority != ''){
+            $query->where('priority', $request->priority);
+            if('priority' == null){
+                $query->where('priority', 'Bassa');
+            }
+        }
+        if ($request->has('sort') && in_array($request->sort, ['asc', 'desc'])) {
+            $query->orderBy('expiration_date', $request->sort);
+        } else {
+            $query->orderBy('created_at', 'asc');
+        }
+        
+
+        $todolists= $query->get();
+
+        $labels = Label::all();
+
         
         
 
-        return view('admin.todolists.index',  compact('todolists'));
+        return view('admin.todolists.index',  compact('todolists','labels'));
     }
 
     /**

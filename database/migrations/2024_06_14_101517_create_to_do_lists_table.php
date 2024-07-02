@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('title', 200)->unique();
             $table->string('subtitle', 300)->nullable(); 
             $table->date('expiration_date')->nullable(); 
-            $table->enum('priority', ['Urgente', 'Alta', 'Media', 'Bassa'])->nullable(); 
+            $table->enum('priority', ['Urgente', 'Alta', 'Media', 'Bassa'])->nullable()->dafault('Bassa'); 
             $table->string('slug', 250)->unique();
             $table->timestamps();
         });

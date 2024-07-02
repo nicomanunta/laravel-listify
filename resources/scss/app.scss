@@ -502,6 +502,19 @@
     box-shadow: 1px 2px #e9ecef4b;
   }
 
+.btn-filtro{
+    background-color: #6f42c1;
+    color: #e9ecef;
+    padding: 7px 10px;
+    border: 0;
+    border-radius: 10px;
+    &:hover{
+        background-color: #ffc107;
+        color: #6f42c1;
+        text-shadow: 2px 2px #6e42c14a;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+    }
+}
 
 
 
