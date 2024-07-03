@@ -176,6 +176,6 @@ class ToDoListController extends Controller
     {
         $todolist->delete();
 
-        return redirect('admin.todolists.index')->with('success', 'To-do list eliminata con successo');
+        return redirect('/todolists')->with('success', 'To-do list eliminata con successo');
     }
 }

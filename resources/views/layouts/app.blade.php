@@ -29,7 +29,7 @@
 
         <nav class="navbar navbar-expand-md navbar-light bg-color-grey shadow-header position-fixed z-1 w-100">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center width-link-logo" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex align-items-center width-link-logo" href="{{ url('/todolists') }}">
                     <div class="text-start">
                         <img class="logo-grigio-2" src="{{URL::asset('/images/logo-viola-2.jpeg')}}" alt="">
                     </div>
@@ -53,7 +53,7 @@
                         @guest
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link color-purple link-app  padding-home" href="{{url('/') }}">{{ __('Home') }}</a>
+                                <a class="nav-link color-purple link-app  padding-home" href="{{url('todolists') }}">{{ __('Home') }}</a>
                             </li>
                         </ul>
                         <!-- Authentication Links -->

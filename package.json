@@ -13,6 +13,7 @@
         "vite": "^4.3.9"
     },
     "dependencies": {
+        "@floating-ui/dom": "^1.6.7",
         "@popperjs/core": "^2.11.8",
         "bootstrap": "^5.3.3",
         "bootstrap-icons": "^1.11.3"

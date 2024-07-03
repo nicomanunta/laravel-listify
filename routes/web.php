@@ -32,8 +32,6 @@ Route::middleware(['auth', 'verified'])->name('admin.')->group(function () {
     Route::resource('todolists', ToDoListController::class);
     Route::resource('labels', LabelController::class);
     
-    Route::get('/homepage', [ToDoListController::class, 'index'])->name('homepage');
-    
 });
 
 

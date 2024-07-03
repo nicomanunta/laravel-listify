@@ -546,6 +546,7 @@
     transition: font-size 0.7s;
     
     
+    
 }
 .btn-check-description + .btn{
     border: 2px solid transparent !important;
@@ -631,3 +632,14 @@
 // .accordion-item::after{
 //     border: 0 !important;
 // }
+
+
+
+//modal create label
+
+
+
+.form-check-input:checked {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}

@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-2 vh-100 bg-color-purple position-fixed overflow-auto">
                     <div class="text-center "> 
-                        <a class="navbar-brand  width-link-logo" href="{{ url('/homepage') }}">
+                        <a class="navbar-brand  width-link-logo" href="{{ url('/todolists') }}">
                             <div class="text-center">
                                 <img class=" logo-grigio-2 mt-4 w-75" src="{{URL::asset('/images/logo-giallo-2.jpeg')}}" alt="">
                             </div>
@@ -40,7 +40,7 @@
                     <div class="mt-4">
                         <ul class="navbar-nav">
                             <li class="nav-item ">
-                                <a class="nav-link link-style color-grey " href="{{ url('homepage') }}">{{__('Home')}}</a>
+                                <a class="nav-link link-style color-grey " href="{{ url('todolists') }}">{{__('Home')}}</a>
                             </li>
                             <li class="nav-item my-2">
                                 <a class="nav-link link-style color-grey " href="{{ url('profile') }}">{{ Auth::user()->name }}</a>

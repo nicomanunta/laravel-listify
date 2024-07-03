@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade " id="exampleModal{{ $todolist->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal{{ $todolist->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog ">
       <div class="modal-content bg-modal">
         <div class="modal-header">

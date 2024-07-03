@@ -31,7 +31,13 @@ class LabelController extends Controller
      */
     public function create()
     {
-        //
+        $users= User::all();
+
+        $labels = Label::all();
+        
+        $todolists = ToDoList::all();
+        
+        return view('admin.labels.create', compact('users', 'labels', 'todolists'));
     }
 
     /**
@@ -43,6 +49,15 @@ class LabelController extends Controller
     public function store(StoreLabelRequest $request)
     {
         
+
+        $label = new Label();
+        $label->label_name = $request->input('label_name');
+        $label->label_color = $request->input('label_color');
+        $label->user_id = auth()->user()->id;
+
+        $label->save();
+
+        return redirect()->back()->with('success', 'Etichetta creata con successo.');
     }
 
     /**

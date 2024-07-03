@@ -44,9 +44,13 @@
 
                 {{-- TABELLA LABELS --}}
                 <div class="form-group  d-flex justify-content-between">
-                    <label for="" class="label-todolist color-purple font-archivo shadow-purple ">Seleziona le etichette</label>
-                    <button type="button" id="" class="btn-etichetta font-archivo shadow-purple me-5">Crea un'etichetta <i class="fa-solid fa-plus fa-plus-3"></i></button>
+                    <label for="" class="label-todolist color-purple font-archivo shadow-purple ">Seleziona le etichette</label>   
+                    <a href="{{route('admin.labels.create')}}">
+                        <button type="button" class="btn-etichetta font-archivo shadow-purple me-3" data-bs-toggle="modal" data-bs-target="#modalCreateLabel">Crea un'etichetta <i class="fa-solid fa-plus fa-plus-3"></i></button>  
+                    </a>
+                    
                 </div>
+                
                 <br>
                 <div class=" mb-3" role="group" aria-label="Basic checkbox toggle button group">
                     <div class="row ">
