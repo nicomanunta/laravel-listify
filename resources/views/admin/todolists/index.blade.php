@@ -7,9 +7,7 @@
             <div class="col-12 py-3 ">
                 <a class="position-fixed z-1" href="{{route('admin.todolists.create')}}"><button class=" btn-create"><i class="fa-solid fa-plus"></i></button></a>
             </div>
-            <a href="{{route('admin.labels.create')}}">
-                <button  class="btn-etichetta font-archivo shadow-purple me-3" >Crea un'etichetta <i class="fa-solid fa-plus fa-plus-3"></i></button>  
-            </a>
+            
         </div>
     </div>
 </div>

@@ -643,3 +643,44 @@
     background-color: #ffc107;
     border-color: #ffc107;
 }
+
+.btn-xmark{
+    border: 0;
+    background-color: transparent;
+}
+
+.btn-elimina {
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color: #6f42c1;
+    border: 0;
+    color: #e9ecef;
+    border-radius: 10px;
+    margin-right: 10px; /* Esempio di margine destro per separare il bottone "chiudi" dal bottone "salva" */
+    
+    &:hover {
+        background-color: #dc3545; /* Colore di hover per il bottone "chiudi" */
+        color: #e9ecef;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.20);
+    }
+}
+
+
+.btn-chiudi{
+    font-size: 20px;
+    padding: 5px 10px ;
+    background-color: #6f42c1 ;
+    border: 0;
+    color: #e9ecef;
+    border-radius: 10px;
+    
+    &:hover{
+        background-color: #e9ecef;
+        border: 0;
+        color: #6f42c1;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.20);
+       
+    }
+}
+
+

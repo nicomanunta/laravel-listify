@@ -50,14 +50,24 @@
                     </a>
                     
                 </div>
-                
+
                 <br>
                 <div class=" mb-3" role="group" aria-label="Basic checkbox toggle button group">
                     <div class="row ">
                         @foreach ($labels as $label)
                             <div class="col-2 text-center mb-2">
                                 <input name="labels[]" type="checkbox" class="btn-check btn-check-label" id="label-{{$label->id}}" value="{{$label->id}}" autocomplete="off" @checked(is_array(old('labels')) && in_array($labels->id, old('labels')))>
-                                <label class="btn btn-label btn-outline " for="label-{{$label->id}}"><span class="badge badge-create text-bg-secondary"  style="background-color: {{$label->label_color}} !important; text-shadow: 2px 2px #00000020;">{{$label->label_name}}</span></label>
+                                <label class="btn btn-label btn-outline " for="label-{{$label->id}}">
+                                    <span class="badge badge-create text-bg-secondary"  style="background-color: {{$label->label_color}} !important; text-shadow: 2px 2px #00000020;">
+                                        {{$label->label_name}}
+                                        @if ($label->user_id != null)
+                                            
+                                        <button type="button" class="ms-3 btn-xmark" data-bs-toggle="modal" data-bs-target="#modalDeleteLabel{{ $label->id }}"><i class="fa-solid fa-xmark" style="color: #6f42c1; text-shadow: 2px 2px #00000020"></i></button>
+                                            
+                                        @endif
+                                    </span>
+                                </label>
+                                
                             </div>
                         @endforeach  
                         @error('priority')
@@ -105,6 +115,11 @@
 @foreach ($todolists as $todolist)
     @include('admin.todolists.partials.modal_delete', ['todolist_id' => $todolist->id])
 @endforeach
+@foreach ($labels as $label)
+    @include('admin.labels.partials.modal_delete_label', ['label_id' => $label->id])
+@endforeach
+
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         let taskIndex = 1;

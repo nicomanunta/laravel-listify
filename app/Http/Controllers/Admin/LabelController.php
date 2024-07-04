@@ -102,6 +102,9 @@ class LabelController extends Controller
      */
     public function destroy(Label $label)
     {
-        //
+        
+        $label->delete();
+
+        return redirect()->route('admin.todolists.create');
     }
 } 
