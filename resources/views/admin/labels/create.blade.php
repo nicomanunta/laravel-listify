@@ -85,7 +85,7 @@
                   </div>
                 </div>
                 
-                @error('label_name')
+                @error('label_color')
                     <div class="text-danger">{{$message}}</div>
                 @enderror
               </div>

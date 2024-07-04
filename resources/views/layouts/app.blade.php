@@ -67,7 +67,7 @@
                         @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link link-app color-purple  padding-register" href="{{ url('homepage') }}">{{__('Home')}}</a>
+                            <a class="nav-link link-app color-purple  padding-register" href="{{ url('todolists') }}">{{__('Home')}}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link link-app color-purple  padding-register" href="{{ url('profile') }}">{{ Auth::user()->name }}</a>

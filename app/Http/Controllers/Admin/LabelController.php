@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\StoreLabelRequest;
 use App\Http\Requests\UpdateLabelRequest;
-use App\Models\Label;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Models\Label;
+
 use App\Models\ToDoList;
 use App\Models\User;
 use App\Models\Task;
@@ -21,7 +22,7 @@ class LabelController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -34,10 +35,9 @@ class LabelController extends Controller
         $users= User::all();
 
         $labels = Label::all();
+        $todolists = Todolist::all(); 
         
-        $todolists = ToDoList::all();
-        
-        return view('admin.labels.create', compact('users', 'labels', 'todolists'));
+        return view('admin.labels.create', compact('todolists', 'users', 'labels'));
     }
 
     /**
@@ -57,7 +57,7 @@ class LabelController extends Controller
 
         $label->save();
 
-        return redirect()->back()->with('success', 'Etichetta creata con successo.');
+        return redirect()->route('admin.todolists.create')->with('success', 'Etichetta creata con successo!');
     }
 
     /**
@@ -104,4 +104,4 @@ class LabelController extends Controller
     {
         //
     }
-}
+} 

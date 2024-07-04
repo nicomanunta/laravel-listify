@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ToDoListController;
+use App\Http\Controllers\Admin\LabelController;
 
 
 /*
@@ -19,11 +20,6 @@ use App\Http\Controllers\Admin\ToDoListController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/homepage', function () {
-    return view('admin.todolists.index');
-})->middleware(['auth', 'verified'])->name('homepage');
-
 
 
 
