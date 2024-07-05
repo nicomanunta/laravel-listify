@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ToDoListController;
 use App\Http\Controllers\Admin\LabelController;
+use App\Http\Controllers\TaskController;
 
 
 /*
@@ -27,6 +28,10 @@ Route::middleware(['auth', 'verified'])->name('admin.')->group(function () {
     // Route::resource crea automaticamente le route CRUD per le todolists
     Route::resource('todolists', ToDoListController::class);
     Route::resource('labels', LabelController::class);
+
+    //ROTTA PER AGGIORNARE LO STATO DI UN'ATTIVITÀ
+    Route::patch('/tasks/{task}/toggle-status', [TaskController::class, 'toggleStatus'])->name('tasks.toggleStatus');
+
     
 });
 

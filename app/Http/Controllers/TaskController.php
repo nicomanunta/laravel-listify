@@ -8,6 +8,15 @@ use App\Models\Task;
 
 class TaskController extends Controller
 {
+    public function toggleStatus(Task $task)
+    {
+        // CAMBIA STATO DA 0 A 1 (FALSE A TRUE) E VICEVERSA
+        $task->status = !$task->status;
+        $task->save();
+
+        return response()->json(['status' => $task->status]);
+    }
+
     /**
      * Display a listing of the resource.
      *

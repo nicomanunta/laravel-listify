@@ -17,7 +17,7 @@
                     @foreach ($todolist->tasks as $task)
                         <li class="mb-3"> 
                             <div class="btn-group w-100 " role="group" aria-label="Basic checkbox toggle button group">
-                                <input type="checkbox" class="btn-check btn-check-description w-100" id="btncheck{{$task->id}}" autocomplete="off">
+                                <input type="checkbox" class="btn-check btn-check-description w-100" id="btncheck{{$task->id}}" autocomplete="off" {{ $task->status ? 'checked' : '' }} data-task-id="{{ $task->id }}">
                                 <label class="btn btn-outline-primary w-100 text-start label-description" for="btncheck{{$task->id}}"> {{ ucfirst($task->description)}}</label>
                             </div>
                         </li>
@@ -72,7 +72,30 @@
     </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.btn-check-description').on('change', function() {
+        var taskId = $(this).data('task-id');
+        var checkbox = $(this);
 
+        $.ajax({
+            url: '/tasks/' + taskId + '/toggle-status',
+            type: 'PATCH',
+            data: {
+                _token: '{{ csrf_token() }}'
+            },
+            success: function(response) {
+                console.log('Status updated:', response.status);
+            },
+            error: function(error) {
+                console.error('Error updating status:', error);
+                checkbox.prop('checked', !checkbox.prop('checked')); 
+            }
+        });
+    });
+});
+</script>
 
 @foreach ($todolists as $todolist)
     @include('admin.todolists.partials.modal_delete', ['todolist_id' => $todolist->id])

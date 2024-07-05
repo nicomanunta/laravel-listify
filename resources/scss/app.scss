@@ -136,11 +136,18 @@
       
     }
 }
-.pencil-style, .trash-style{
+.pencil-style{
     font-size: 13px;
     &:hover{
         color: #ffc107;
         text-shadow: 2px 2px #ffc1074d;
+    }
+}
+.trash-style{
+    font-size: 13px;
+    &:hover{
+        color: #fc0707;
+        text-shadow: 2px 2px #e9ecef4b;
     }
 }
 
