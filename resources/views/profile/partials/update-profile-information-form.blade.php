@@ -1,12 +1,8 @@
-<section>
+<section class="">
     <header>
-        <h2 class="text-secondary">
-            {{ __('Profile Information') }}
+        <h2 class="mb-3 color-yellow font-archivo shadow-dark">
+            {{ __('Informazioni Profilo') }}
         </h2>
-
-        <p class="mt-1 text-muted">
-            {{ __("Update your account's profile information and email address.") }}
-        </p>
     </header>
 
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
@@ -18,21 +14,30 @@
         @method('patch')
 
         <div class="mb-2">
-            <label for="name">{{__('Name')}}</label>
-            <input class="form-control" type="text" name="name" id="name" autocomplete="name" value="{{old('name', $user->name)}}" required autofocus>
+            <label class="color-purple shadow-purple font-archivo" for="name">{{__('Nome')}}</label>
+            <input class="form-control input-todolist" type="text" name="name" id="name" autocomplete="name" value="{{old('name', $user->name)}}" required autofocus>
             @error('name')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $errors->get('name')}}</strong>
             </span>
             @enderror
         </div>
+        <div class="mb-2">
+            <label class="color-purple shadow-purple font-archivo" for="surname">{{__('Cognome')}}</label>
+            <input class="form-control input-todolist" type="text" name="surname" id="surname" autocomplete="surname" value="{{old('surname', $user->surname)}}" required autofocus>
+            @error('surname')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->get('surname')}}</strong>
+            </span>
+            @enderror
+        </div>
 
         <div class="mb-2">
-            <label for="email">
+            <label class="color-purple shadow-purple font-archivo" for="email">
                 {{__('Email') }}
             </label>
 
-            <input id="email" name="email" type="email" class="form-control" value="{{ old('email', $user->email)}}" required autocomplete="username" />
+            <input id="email" name="email" type="email" class="form-control input-todolist" value="{{ old('email', $user->email)}}" required autocomplete="username" />
 
             @error('email')
             <span class="alert alert-danger mt-2" role="alert">
@@ -59,8 +64,8 @@
             @endif
         </div>
 
-        <div class="d-flex align-items-center gap-4">
-            <button class="btn btn-primary" type="submit">{{ __('Save') }}</button>
+        <div class="d-flex align-items-center gap-4 mt-3">
+            <button class="btn btn-salva font-archivo" type="submit">{{ __('Salva') }}</button>
 
             @if (session('status') === 'profile-updated')
             <script>

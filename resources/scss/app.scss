@@ -930,3 +930,44 @@
     left: 700px;
     color: #e9ecefc7;
 }
+
+
+
+
+
+
+
+.btn-chiudi-account{
+    font-size: 20px;
+    padding: 5px 10px ;
+    background-color: #ffc107 ;
+    border: 0;
+    color: #6f42c1;
+    border-radius: 10px;
+    
+    &:hover{
+        background-color: #6f42c1;
+        border: 0;
+        color: #e9ecef;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.20);
+        text-shadow: 2px 2px #e9ecef4b;
+       
+    }
+}
+
+.btn-elimina-account {
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color: #ffc107;
+    border: 0;
+    color: #6f42c1;
+    border-radius: 10px;
+    margin-right: 10px; 
+    
+    &:hover {
+        background-color: #dc3545; 
+        color: #e9ecef;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.20);
+        text-shadow: 2px 2px #e9ecef4b;
+    }
+}

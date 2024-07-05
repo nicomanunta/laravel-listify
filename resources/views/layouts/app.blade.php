@@ -90,7 +90,7 @@
         </nav>
 
 
-        <main class="bg-color-purple vh-100 overflow-hidden">
+        <main class="bg-color-purple min-vh-100 ">
             @yield('content')
         </main>
     </div>
