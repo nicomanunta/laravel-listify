@@ -45,6 +45,9 @@
 .shadow-purple{
     text-shadow: 2px 2px #6e42c14a;
 }
+.shadow-dark{
+    text-shadow: 2px 2px #6e42c1a6;
+}
 
 .btn-listify-grey{
     padding: 10px 15px ;
@@ -61,6 +64,9 @@
     }
 }
 
+.fa-square{
+    font-size: 20px;
+}
 
 
 // app.blade
@@ -141,6 +147,18 @@
 .hr-style{
     margin: 8px 0;
     color: #e9ecef;
+}
+
+.li-crea-size{
+    font-size: 14px;
+    transition: transform 0.5s;
+    transform-origin:  left;
+    &:hover{
+        transition: transform 0.5s;
+        transform: scale(1.1);
+        transform-origin:  left;
+    }
+    
 }
 
 // welcome.blade
@@ -298,7 +316,7 @@
 
 .h1-title{
     font-size: 60px;
-    text-shadow: 3px 3px #6e42c14a;
+    text-shadow: 3px 3px #6e42c1a6;
 }
 .input-todolist:focus, .select-todolist:focus, .textarea-todolist:focus{
     border: 2px solid #f9d157 !important; /* Cambia il colore del bordo qui */
@@ -619,23 +637,15 @@
 .accordion-header{
     background-color: #e9ecef !important;
 }
-// .accordion-button::after{
-//     color: #6f42c1 !important;
-//     text-shadow: 2px 2px #6e42c14a !important;
-//     border: 0 !important;
-
-// }
 .accordion-item{
     border: 0 !important;
 }
 
-// .accordion-item::after{
-//     border: 0 !important;
-// }
 
 
 
-//modal create label
+
+// create label
 
 
 
@@ -648,25 +658,77 @@
     border: 0;
     background-color: transparent;
 }
+.btn-check-label-color + .btn:hover{
+    background-color: #6f42c1!important;
+    color: #e9ecef!important;
+}
+.btn-check-label-color:checked + .btn{
+    background-color: #ffc107!important;
+    color: #6f42c1!important;
+    text-shadow: 2px 2px #6e42c14a;
+    border: 0;
+}
+.btn-check-label-color + .btn{
+    
+    border: 0;
+}
+//modale eliminazione
 
 .btn-elimina {
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color: #e9ecef;
+    border: 0;
+    color: #6f42c1;
+    border-radius: 10px;
+    margin-right: 10px; 
+    
+    &:hover {
+        background-color: #dc3545; 
+        color: #e9ecef;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.20);
+        text-shadow: 2px 2px #e9ecef4b;
+    }
+}
+
+
+.btn-chiudi{
+    font-size: 20px;
+    padding: 5px 10px ;
+    background-color: #e9ecef ;
+    border: 0;
+    color: #6f42c1;
+    border-radius: 10px;
+    
+    &:hover{
+        background-color: #ffc107;
+        border: 0;
+        color: #6f42c1;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.20);
+        text-shadow: 2px 2px #6e42c14a;
+       
+    }
+}
+
+.btn-elimina-label {
     font-size: 20px;
     padding: 5px 10px;
     background-color: #6f42c1;
     border: 0;
     color: #e9ecef;
     border-radius: 10px;
-    margin-right: 10px; /* Esempio di margine destro per separare il bottone "chiudi" dal bottone "salva" */
+    margin-right: 10px; 
     
     &:hover {
-        background-color: #dc3545; /* Colore di hover per il bottone "chiudi" */
+        background-color: #dc3545; 
         color: #e9ecef;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.20);
+        text-shadow: 2px 2px #e9ecef4b;
     }
 }
 
 
-.btn-chiudi{
+.btn-chiudi-label{
     font-size: 20px;
     padding: 5px 10px ;
     background-color: #6f42c1 ;
@@ -679,8 +741,192 @@
         border: 0;
         color: #6f42c1;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.20);
+        text-shadow: 2px 2px #6e42c14a;
        
     }
 }
 
 
+// LOGIN E REGISTER BLADE
+.font-dati{
+    font-size: 20px;
+}
+
+
+//login
+
+.fa-list-login{
+    font-size: 80px;
+    transform: rotate(-5deg);
+    top: -40px;
+    left: 650px;
+    color: #ffc107bd;
+}
+.fa-list-ol-login{
+    font-size: 100px;
+    transform: rotate(-15deg);
+    top: -150px;
+    left: 900px;
+    color: #e9ecefc7;
+}
+
+.fa-list-ul-login{
+    font-size: 90px;
+    transform: rotate(5deg);
+    top: -400px;
+    left: -100px;
+    color: #e9ecefc7;
+}
+.fa-list-check-login{
+    font-size: 110px;
+    transform: rotate(15deg);
+    top: 0px;
+    left: -300px;
+    color: #e9ecefc7;
+}
+.fa-check-login{
+    font-size: 80px;
+    transform: rotate(-25deg);
+    top: -100px;
+    left: -100px;
+    color: #ffc107bd;
+}
+.fa-circle-check-login{
+    font-size: 105px;
+    transform: rotate(25deg);
+    top: 100px;
+    left: 0px;
+    color: #ffc107bd;
+}
+.fa-x-login{
+    font-size: 95px;
+    transform: rotate(30deg);
+    top: -350px;
+    left: -300px;
+    color: #ffc107bd;
+
+}   
+.fa-circle-xmark-login{
+    font-size: 83px;
+    transform: rotate(-30deg);
+    top: 140px;
+    left: 540px;
+    color: #e9ecefc7;
+}
+.pencil-2-login{
+    font-size: 85px;
+    transform: rotate(-65deg);
+    top: 40px;
+    left: 300px;
+    color: #ffc107bd;
+}
+.fa-pen-to-square-login{
+    font-size: 105px;
+    transform: rotate(-5deg);
+    top: -380px;
+    left: 900px;
+    color: #ffc107bd;
+}
+.fa-file-pen-login{
+    font-size: 100px;
+    transform: rotate(-15deg);
+    top: 100px;
+    left: 850px;
+    color: #e9ecefc7;
+}
+.pencil-1-login{
+    font-size: 95px;
+    transform: rotate(10deg);
+    top: -250px;
+    left: 670px;
+    color: #e9ecefc7;
+}
+
+//register
+
+.fa-list-register{
+    font-size: 80px;
+    transform: rotate(-5deg);
+    top: -240px;
+    left: 700px;
+    color: #ffc107bd;
+}
+.fa-list-ol-register{
+    font-size: 100px;
+    transform: rotate(-15deg);
+    top: -350px;
+    left: 900px;
+    color: #e9ecefc7;
+}
+
+.fa-list-ul-register{
+    font-size: 90px;
+    transform: rotate(5deg);
+    top: -600px;
+    left: -100px;
+    color: #e9ecefc7;
+}
+.fa-list-check-register{
+    font-size: 110px;
+    transform: rotate(15deg);
+    top: -300px;
+    left: -300px;
+    color: #e9ecefc7;
+}
+.fa-check-register{
+    font-size: 120px;
+    transform: rotate(-25deg);
+    top: -70px;
+    left: -50px;
+    color: #e9ecefc7;
+}
+.fa-circle-check-register{
+    font-size: 105px;
+    transform: rotate(25deg);
+    top: -100px;
+    left: -300px;
+    color: #ffc107bd;
+}
+.fa-x-register{
+    font-size: 95px;
+    transform: rotate(30deg);
+    top: -500px;
+    left: -300px;
+    color: #ffc107bd;
+
+}   
+.fa-circle-xmark-register{
+    font-size: 103px;
+    transform: rotate(-30deg);
+    top: -100px;
+    left: 640px;
+    color: #e9ecefc7;
+}
+.pencil-2-register{
+    font-size: 85px;
+    transform: rotate(-5deg);
+    top: -50px;
+    left: 420px;
+    color: #ffc107bd;
+}
+.fa-pen-to-square-register{
+    font-size: 105px;
+    transform: rotate(-5deg);
+    top: -600px;
+    left: 900px;
+    color: #ffc107bd;
+}
+.fa-file-pen-register{
+    font-size: 100px;
+    transform: rotate(-15deg);
+    top: -100px;
+    left: 880px;
+    color: #ffc107bd;
+}
+.pencil-1-register{
+    font-size: 95px;
+    transform: rotate(10deg);
+    top: -460px;
+    left: 700px;
+    color: #e9ecefc7;
+}

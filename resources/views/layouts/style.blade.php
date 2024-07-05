@@ -58,7 +58,9 @@
                     <div class="mt-5">
                         <ul class="navbar-nav">
                             <li class="nav-item text-uppercase color-yellow font-archivo padding-20 size-todolist"> To-do List</li>
+                            <li class="nav-item padding-20 my-2 li-crea-size"><a class="text-decoration-none color-yellow font-archivo " href="{{route('admin.todolists.create')}}">Crea  To-Do List <i class="fa-solid fa-plus color-yellow" style="font-size: 15px"></i></a></li>
                         </ul>
+                        
                         <ul class="navbar-nav mt-3">
                             @isset($todolists)
                                 @foreach ($todolists as $todolist)
