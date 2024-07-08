@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth', 'verified'])->name('admin.')->group(function () {
-    // Route::resource crea automaticamente le route CRUD per le todolists
+    
     Route::resource('todolists', ToDoListController::class);
     Route::resource('labels', LabelController::class);
 
