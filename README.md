@@ -1,6 +1,6 @@
 # Listify
 
-Listify è un'applicazione web semplice e intuitiva che consente agli utenti di creare e gestire le proprie liste di attività ("to-do lists").
+Listify è un'applicazione web dedicata alla creazione e alla gestione, da parte degli utenti, delle proprie liste di attività ("to-do list").
 
 ## Funzionalità
 
@@ -14,10 +14,9 @@ Listify è un'applicazione web semplice e intuitiva che consente agli utenti di 
 
 ## Tecnologie Utilizzate
 
-- **PHP**: Linguaggio di programmazione utilizzato per lo sviluppo del backend.
 - **Laravel**: Framework PHP per la costruzione dell'applicazione web.
 - **JavaScript**: Utilizzato per migliorare l'interattività dell'interfaccia utente.
 - **HTML**: Linguaggio di markup per la struttura delle pagine web.
-- **CSS con Bootstrap**: Utilizzato per lo stile e la responsività del sito.
+- **CSS con Bootstrap**: Utilizzato per lo stile del sito.
   
 
