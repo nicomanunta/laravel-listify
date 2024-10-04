@@ -22,13 +22,14 @@ class ToDoListController extends Controller
      */
     public function index(Request $request)
     {
+        // query per ottenere le todolist dell'utente
         $query = ToDoList::where('user_id', auth()->id());
 
+        // filtri per etichetta priorità e scadenza
         if ($request->has('label') && $request->label != '') {
             $query->whereHas('labels', function($q) use ($request) {
                 $q->where('label_name', $request->label);
             });
-            
         }
         if($request->has('priority') && $request->priority != ''){
             $query->where('priority', $request->priority);
@@ -41,9 +42,10 @@ class ToDoListController extends Controller
         } else {
             $query->orderBy('created_at', 'asc');
         }
-        
-
+    
         $todolists= $query->get();
+
+
 
         $labels = Label::all();
 
@@ -60,6 +62,7 @@ class ToDoListController extends Controller
      */
     public function create()
     {
+        // recupero utenti etichette e todolist dell'utente
         $users= User::all();
 
         $labels = Label::all();
@@ -77,22 +80,26 @@ class ToDoListController extends Controller
      */
     public function store(StoreToDoListRequest $request)
     {
+        // dati dal form
         $form_data = $request->all();
+        // richiesta nuova todolist 
         $todolist = new ToDoList();
         $slug = Str::slug($form_data['title'],'-');
         $form_data['slug'] = $slug;
         $todolist->user_id = auth()->user()->id;
+
         $todolist->fill($form_data);
 
         $todolist->save();
 
+        // aggiungo i task associati 
         foreach ($form_data['tasks'] as $task_data) {
             $task = new Task();
             $task->description = $task_data['description'];
             $task->status = false;
             $todolist->tasks()->save($task);
         }
-
+        // collego le etichette
         if($request->has('labels')){
             $todolist->labels()->attach($form_data['labels']);
         }
@@ -108,6 +115,7 @@ class ToDoListController extends Controller
      */
     public function show(ToDoList $todolist)
     {
+        
         $todolists = Todolist::where('user_id', auth()->id())->get(); 
         $tasks = $todolist->tasks;
         return view('admin.todolists.show', compact('todolist','todolists', 'tasks'));
@@ -142,25 +150,30 @@ class ToDoListController extends Controller
      */
     public function update(UpdateToDoListRequest $request, ToDoList $todolist)
     {
+
         $form_data = $request->all();
         $slug = Str::slug($form_data['title'],'-');
         $form_data['slug'] = $slug;
+        // aggiorno i dati della todolist
         $todolist->update($form_data);
+
+        // cancello i task 
         $todolist->tasks()->delete();
-        
+        // aggiungo i task
         foreach ($form_data['tasks'] as $task_data) {
             $task = new Task();
             $task->description = $task_data['description'];
             $task->status = false;
             $todolist->tasks()->save($task);
         }
-
+        // aggiorno le etichette
         if($request->has('labels')){
             $todolist->labels()->sync($form_data['labels']);
         }
         else{
             $todolist->labels()->sync([]);
         }
+        
 
         return redirect()->route('admin.todolists.index');
 

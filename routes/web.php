@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 
-
+// rotte per la gestione delle crud
 Route::middleware(['auth', 'verified'])->name('admin.')->group(function () {
     
     Route::resource('todolists', ToDoListController::class);

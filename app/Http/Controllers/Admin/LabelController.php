@@ -32,10 +32,11 @@ class LabelController extends Controller
      */
     public function create()
     {
+        // recupero utenti etichette e todolist dell'utente
         $users= User::all();
 
         $labels = Label::all();
-        $todolists = Todolist::all(); 
+        $todolists = Todolist::where('user_id', auth()->id())->get(); 
         
         return view('admin.labels.create', compact('todolists', 'users', 'labels'));
     }
@@ -51,8 +52,10 @@ class LabelController extends Controller
         
 
         $label = new Label();
+
         $label->label_name = $request->input('label_name');
         $label->label_color = $request->input('label_color');
+        
         $label->user_id = auth()->user()->id;
 
         $label->save();
