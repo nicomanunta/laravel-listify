@@ -111,7 +111,7 @@
                                 
                             </div>
                             <div class="d-flex text-center bg-color-purple border-radius-bottom border-yellow">
-                                <a class="col-6 text-center btn-edit" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $todolist->id }}">
+                                <a class="col-6 text-center btn-edit" href="{{route('admin.todolists.edit', ['todolist' => $todolist->id])}}">
                                     <i class="fa-solid fa-pencil pencil"></i>
                                 </a>
                                 
